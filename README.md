@@ -1,1 +1,1 @@
-# Aqui Estaran las Diferentes Entregas del curso de JavaScript de CoderHouse
+# Aqui Estaran las Diferentes Entregas o ejercicios del curso de JavaScript de CoderHouse
