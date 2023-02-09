@@ -25,7 +25,7 @@ let opcion= parseInt(prompt(`Bienvenido a Play Cinema. Ingrese alguna de las opc
 function printCartelera(cartelera){
     let mensaje = "Cartelera: \n"
     cartelera.forEach(movie => {
-        mensaje +=`Pelicula: ${movie.nombre}`;
+        mensaje +=`\nPelicula: ${movie.nombre}`;
     });
     alert(mensaje);
 }
@@ -33,7 +33,7 @@ function printCartelera(cartelera){
 function valoracionTotal(cartelera){
     let mensaje = "Cartelera: \n"
     cartelera.forEach(movie => {
-        mensaje +=`Pelicula: ${movie.nombre}, Valoracion ${movie.valoracion}`;
+        mensaje +=`\nPelicula: ${movie.nombre}, Valoracion: ${movie.valoracion}`;
     });
     alert(mensaje);
 }
@@ -55,13 +55,13 @@ while(opcion != 4){
             break;
         }
         case 3:{
-            let opcion2 = prompt(`Bienvenido al espacio de FeedBack de peliculas en cartelera.
-                            Selecciona el numero correspondiente de la pelicula a valorar o opcion 6 para finalizar la devolucion
+            let opcion2 = parseInt(prompt(`Bienvenido al espacio de FeedBack de peliculas en cartelera.
+Selecciona el numero correspondiente de la pelicula a valorar o opcion 6 para finalizar la devolucion
                             1- Avatar: El Camino del Agua
                             2- The Wale
                             3- Llaman a la puerta
                             4- M3gan
-                            5- Gato Con botas: El Ultimo Deseo`);
+                            5- Gato Con botas: El Ultimo Deseo`));
             
                                         
             while(opcion2 != 6){
@@ -101,13 +101,13 @@ while(opcion != 4){
                         break;
                     }
                 }
-                opcion2 = prompt(`Bienvenido al espacio de FeedBack de peliculas en cartelera.
+                opcion2 = parseInt(prompt(`Bienvenido al espacio de FeedBack de peliculas en cartelera.
                                     Selecciona el numero correspondiente de la pelicula a valorar o opcion 6 para finalizar la devolucion
                                     1- Avatar: El Camino del Agua
                                     2- The Wale
                                     3- Llaman a la puerta
                                     4- M3gan
-                                    5- Gato Con botas: El Ultimo Deseo`);
+                                    5- Gato Con botas: El Ultimo Deseo`));
             }
             break;
         }
