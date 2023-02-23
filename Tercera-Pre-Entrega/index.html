@@ -5,102 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PC-Shop</title>
-    <script src="./index.js"></script>
     <link rel="stylesheet" href="main.css">
-</head>
-<body>
-    <div id="container">
-        <div class="card" id="card-component-1">
-            <img src="https://www.invidcomputers.com/images/000000000041254222609-CH-9127414-NA-Gallery-K95-PLATINUM-RGB-XT-01.png" class="card-img-top" alt="Teclado mecánico Corsair K95 RGB Platinum XT">
-            <div class="card-body">
-              <h5 class="card-title">Teclado mecánico Corsair K95 RGB Platinum XT</h5>
-              <p class="card-text">Teclado mecánico de alta gama con iluminación RGB, interruptores Cherry MX y 6 teclas macro programables</p>
-              <p class="card-text precio">$199.99</p>
-              <a href="#" class="btn btn-primary" onclick="addToCart('Teclado mecánico Corsair K95 RGB Platinum XT', 199.99)">Agregar al carrito</a>
-            </div>
-        </div>
-        <div class="card" id="card-component-2">
-            <img src="http://d3ugyf2ht6aenh.cloudfront.net/stores/456/610/products/steel1-f2067969e20fde678316474535436533-640-0.webp" class="card-img-top" alt="Auriculares gaming SteelSeries Arctis Pro">
-            <div class="card-body">
-              <h5 class="card-title">Auriculares gaming SteelSeries Arctis Pro</h5>
-              <p class="card-text">Auriculares gaming de alta fidelidad con micrófono retráctil, iluminación RGB y transductores de alta resolución</p>
-              <p class="card-text precio">$179.99</p>
-              <a href="#" class="btn btn-primary" onclick="addToCart('Auriculares gaming SteelSeries Arctis Pro', 179.99)">Agregar al carrito</a>
-            </div>
-          </div>
-        <div class="card" id="card-component-3">
-            <img src="https://tecnomilenio.com.ar/wp-content/uploads/2022/09/logitech-mx-master-s3-negro1.png" class="card-img-top" alt="Mouse inalámbrico Logitech MX Master 3">
-            <div class="card-body">
-              <h5 class="card-title">Mouse inalámbrico Logitech MX Master 3</h5>
-              <p class="card-text">Mouse inalámbrico ergonómico con 7 botones programables, sensor láser de alta precisión y tecnología de desplazamiento rápido</p>
-              <p class="card-text precio">$99.99</p>
-              <a href="#" class="btn btn-primary" onclick="addToCart('Mouse inalámbrico Logitech MX Master 3', 99.99)">Agregar al carrito</a>
-            </div>
-          </div>
-        <div class="card" id="card-component-4">
-            <img src="https://http2.mlstatic.com/D_NQ_NP_828958-MLA48760421474_012022-O.jpg" class="card-img-top" alt="Monitor Dell UltraSharp U2719D">
-            <div class="card-body">
-              <h5 class="card-title">Monitor Dell UltraSharp U2719D</h5>
-              <p class="card-text">Monitor de 27 pulgadas con resolución QHD, ángulo de visión amplio y diseño sin marco</p>
-              <p class="card-text precio">$379.99</p>
-              <a href="#" class="btn btn-primary" onclick="addToCart('Monitor Dell UltraSharp U2719D', 379.99)">Agregar al carrito</a>
-            </div>
-        </div>
-        <div class="card" id="card-component-5">
-            <img src="https://resource.logitech.com/content/dam/logitech/en/products/speakers/computer-speakers/z623/gallery/z623-gallery-1.png" class="card-img-top" alt="Altavoces Logitech Z623">
-            <div class="card-body">
-              <h5 class="card-title">Altavoces Logitech Z623</h5>
-              <p class="card-text">Sistema de altavoces de 2.1 canales con 200 vatios de potencia y entrada de audio de 3,5 mm y RCA</p>
-              <p class="card-text precio">$119.99</p>
-              <a href="#" class="btn btn-primary" onclick="addToCart('Altavoces Logitech Z623', 119.99)">Agregar al carrito</a>
-            </div>
-        </div>
-        <div class="card" id="card-component-6">
-            <img src="https://www.maximus.com.ar/Temp/App_WebSite/App_PictureFiles/Items/960-001360_800.jpg" class="card-img-top" alt="Webcam Logitech C920">
-            <div class="card-body">
-              <h5 class="card-title">Webcam Logitech C920</h5>
-              <p class="card-text">Cámara web Full HD 1080p con micrófono integrado y compatibilidad con Skype, Zoom y otros servicios de videoconferencia</p>
-              <p class="card-text precio">$69.99</p>
-              <a href="#" class="btn btn-primary" onclick="addToCart('Webcam Logitech C920', 69.99)">Agregar al carrito</a>
-            </div>
-        </div>
-        <div class="card" id="card-component-7">
-            <img src="https://www.deffo.com.ar/wp-content/uploads/2022/05/WDBYVG0010-20-BBK-1.webp" class="card-img-top" alt="Disco duro externo WD My Passport">
-            <div class="card-body">
-              <h5 class="card-title">Disco duro externo WD My Passport</h5>
-              <p class="card-text">Disco duro portátil de 4 TB con conexión USB 3.0 y software de copia de seguridad automática</p>
-              <p class="card-text precio">$89.99</p>
-              <a href="#" class="btn btn-primary" onclick="addToCart('Disco duro externo WD My Passport', 89.99)">Agregar al carrito</a>
-            </div>
-        </div>
-        <div class="card" id="card-component-8">
-            <img src="https://mexx-img-2019.s3.amazonaws.com/33174_2.jpeg" class="card-img-top" alt="Teclado inalámbrico Logitech K380">
-            <div class="card-body">
-              <h5 class="card-title">Teclado inalámbrico Logitech K380</h5>
-              <p class="card-text">Teclado inalámbrico compacto con conectividad Bluetooth y soporte multiplataforma</p>
-              <p class="card-text precio">$39.99</p>
-              <a href="#" class="btn btn-primary" onclick="addToCart('Teclado inalámbrico Logitech K380', 39.99)">Agregar al carrito</a>
-            </div>
-        </div>
-        <div class="card" id="card-component-9">
-            <img src="https://www.sony.com.ar/image/5d02da5df552836db894cead8a68f5f3?fmt=pjpeg&wid=330&bgcolor=FFFFFF&bgc=FFFFFF" class="card-img-top" alt="Auriculares inalámbricos Sony WH-1000XM4">
-            <div class="card-body">
-              <h5 class="card-title">Auriculares inalámbricos Sony WH-1000XM4</h5>
-              <p class="card-text">Auriculares inalámbricos con cancelación de ruido avanzada y hasta 30 horas de autonomía de batería</p>
-              <p class="card-text precio">$349.99</p>
-              <a href="#" class="btn btn-primary" onclick="addToCart('Auriculares inalámbricos Sony WH-1000XM4', 349.99)">Agregar al carrito</a>
-            </div>
-        </div>
-    </div>
+  </head>
+  <body>
+    <div id="container"></div>
     <div id="cart">
-        <h3>Carrito de compras</h3>
-        <ul id="cart-items"></ul>
-        <p>Total: $<span id="cart-total">0.00</span></p>
-        <div class="cart-buttons">
-          <button class="btn btn-danger" onclick="emptyCart()">Vaciar carrito</button>
-          <button class="btn btn-primary" onclick="updateCart()">Actualizar carrito</button>
-        </div>
+      <h3>Carrito de compras</h3>
+      <ul id="cart-items"></ul>
+      <p>Total: $<span id="cart-total">0.00</span></p>
+      <div class="cart-buttons">
+        <button class="btn btn-danger" id="emptyCart">Vaciar carrito</button>
+        <button class="btn btn-primary" id="updateCart">Actualizar carrito</button>
+      </div>
     </div>
-    
+    <script src="./index.js"></script>
 </body>
 </html>
