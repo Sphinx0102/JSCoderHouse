@@ -34,9 +34,13 @@ function createCard(data) {
 	
 	card.classList.add("card");
 	if(data.personaje){
-		imagen.src = data.imagen;
-		description.textContent = data.personaje;
-		checkbox.type = "checkbox";
+		if(data.casaDeHogwarts != "ninguna"){
+			imagen.src = data.imagen;
+			description.textContent = data.personaje;
+			checkbox.type = "checkbox";
+		}else{
+			checkbox.hidden = true;
+		}
 	}else if(data.uso){
 		const nombre = document.createElement("h1");
 		nombre.textContent = data.hechizo;
@@ -53,7 +57,7 @@ function createCard(data) {
 	card.appendChild(description);
 	card.appendChild(checkbox);
 
-	if(data.nombre == 'tenebroso' || (data.casaDeHogwarts == 'Slytherin' || data.casaDeHogwarts == 'ninguna' )){
+	if(data.nombre == 'tenebroso' || data.casaDeHogwarts == 'Slytherin'){
 		card.setAttribute("id", "tenebroso");
 	}
 	else if (data.nombre == 'orden'){
