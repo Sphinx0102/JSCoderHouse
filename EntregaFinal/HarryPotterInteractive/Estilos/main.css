@@ -159,8 +159,8 @@ main {
 .card:hover img {
   filter: blur(5px);
   z-index: 0;
-  content: "Revelio";
 }
+
 
 .card input[type="checkbox"] {
   width: 100%;

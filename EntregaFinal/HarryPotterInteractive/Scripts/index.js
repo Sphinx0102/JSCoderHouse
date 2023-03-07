@@ -1,8 +1,9 @@
-
 const url = "https://harry-potter-api.onrender.com/db"
 
 
-const container = document.getElementById('container');
+const bando = document.getElementById('bando');
+const personajes = document.getElementById('personajes');
+const hechizos = document.getElementById('hechizos');
 
 const bandos = [
 	{
@@ -31,54 +32,91 @@ function createCard(data) {
 	const description = document.createElement("p");
 	const checkbox = document.createElement("input");
 	
-	
 	card.classList.add("card");
-	imagen.src = data.datos.logo;
-	description.textContent = data.datos.descripcion;
-	checkbox.type = "checkbox";
+	if(data.personaje){
+		imagen.src = data.imagen;
+		description.textContent = data.personaje;
+		checkbox.type = "checkbox";
+	}else if(data.uso){
+		const nombre = document.createElement("h1");
+		nombre.textContent = data.hechizo;
+		card.appendChild(nombre);
+		description.textContent = data.uso;
+		checkbox.type = "checkbox";
+	}else{
+		imagen.src = data.datos.logo;
+		description.textContent = data.datos.descripcion;
+		checkbox.type = "checkbox";
+	}
 	
 	card.appendChild(imagen);
 	card.appendChild(description);
 	card.appendChild(checkbox);
-	container.appendChild(card);
 
-	if(data.nombre == 'tenebroso'){
+	if(data.nombre == 'tenebroso' || (data.casaDeHogwarts == 'Slytherin' || data.casaDeHogwarts == 'ninguna' )){
 		card.setAttribute("id", "tenebroso");
 	}
 	else if (data.nombre == 'orden'){
 		card.setAttribute("id", "orden");
 	}
 
+	if(data.datos){
+		bando.appendChild(card);
+	}
+	else if(data.personaje){
+		card.setAttribute("class", "personaje");
+		personajes.appendChild(card);
+	}
+	else if(data.hechizo){
+		card.setAttribute("class", "hechizo");
+		hechizos.appendChild(card);
+	}
+	else{
+		console.log("Error al Crear la card");
+	}
+	
+
 }
 
 bandos.forEach((bando) => createCard(bando));
 
-const borderOrden = document.getElementById('orden');
-const borderTene = document.getElementById('tenebroso');
+const orden = document.getElementById('orden');
+const tenebroso = document.getElementById('tenebroso');
 
-let fire = document.createElement('div');
-fire.classList.add('fire');
-borderOrden.appendChild(fire);
-borderTene.appendChild(fire);
-
-setInterval(() => {
-	let x = Math.random() * 100;
-	let y = Math.random() * 100;
-	smoke.style.left = `${x}%`;
-	smoke.style.top = `${y}%`;
-}, 1000);
-
+function createButton(text, id) {
+	const button = document.createElement("button");
+	button.textContent = text;
+	button.addEventListener("click", () => {
+	  const element = document.getElementById(id);
+	  element.scrollIntoView({ behavior: "smooth" });
+	});
+	const routes = document.getElementById("routes");
+	routes.appendChild(button);
+}
+  
+createButton("Bando", "bando");
+createButton("Personajes", "personajes");
+createButton("Hechizos", "hechizos");
 
 
 fetch(url)
 	.then((res) => res.json())
 	.then((data) => {
-		
 
+		data.personajes.forEach((personaje) => {
+			createCard(personaje);
+		});
 
+		orden.addEventListener("click", ()=>{
+			personajes.scrollIntoView();
+		});
+		tenebroso.addEventListener("click", ()=>{
+			personajes.scrollIntoView();
+		});
 
-
-
+		data.hechizos.forEach((hechizo) => {
+			createCard(hechizo);
+		});
 	})
 	.catch((e) => console.log(e))
 

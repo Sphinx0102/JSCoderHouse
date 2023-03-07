@@ -7,12 +7,14 @@
     <title>Harry Potter Wiki</title>
     <link rel="stylesheet" href="Estilos/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+    <!-- <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js" type="module"></script> -->
 
 </head>
 <body class="custom-cursor">
     <header>
         <nav>
             <h2> Harry Potter Wiki </h2>
+            <div id ="routes"><!--Aqui nav dinamica--></div>
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/leonardo-rosales-8b173a203/" target="_blank" class="icon icon--linkedin">
                     <i class="ri-linkedin-line"></i>
@@ -27,9 +29,10 @@
         </nav>
     </header>
     <main id="container">
-
+        <div id="bando"></div>
+        <div id="personajes"></div>
+        <div id="hechizos"></div>
     </main>
-    <script src="Scripts/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="Scripts/index.js" type="module"></script>
 </body>
 </html>
