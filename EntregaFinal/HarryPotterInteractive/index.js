@@ -1,9 +1,9 @@
-const url = "https://harry-potter-api.onrender.com/db"
-
+// const url = "https://harry-potter-api.onrender.com/db"
+import App from "./App.js";
 
 const bando = document.getElementById('bando');
-const personajes = document.getElementById('personajes');
-const hechizos = document.getElementById('hechizos');
+// const personajes = document.getElementById('personajes');
+// const hechizos = document.getElementById('hechizos');
 
 const bandos = [
 	{
@@ -67,14 +67,14 @@ function createCard(data) {
 	if(data.datos){
 		bando.appendChild(card);
 	}
-	else if(data.personaje){
-		card.setAttribute("class", "personaje");
-		personajes.appendChild(card);
-	}
-	else if(data.hechizo){
-		card.setAttribute("class", "hechizo");
-		hechizos.appendChild(card);
-	}
+	// else if(data.personaje){
+	// 	card.setAttribute("class", "personaje");
+	// 	personajes.appendChild(card);
+	// }
+	// else if(data.hechizo){
+	// 	card.setAttribute("class", "hechizo");
+	// 	hechizos.appendChild(card);
+	// }
 	else{
 		console.log("Error al Crear la card");
 	}
@@ -84,43 +84,55 @@ function createCard(data) {
 
 bandos.forEach((bando) => createCard(bando));
 
-const orden = document.getElementById('orden');
-const tenebroso = document.getElementById('tenebroso');
 
-function createButton(text, id) {
-	const button = document.createElement("button");
-	button.textContent = text;
-	button.addEventListener("click", () => {
-	  const element = document.getElementById(id);
-	  element.scrollIntoView({ behavior: "smooth" });
-	});
-	const routes = document.getElementById("routes");
-	routes.appendChild(button);
-}
+
+orden.addEventListener("click", () => {
+	window.history.pushState({}, "personajes", "/personajes");
+	App();
+});
+
+tenebroso.addEventListener("click", () => {
+	window.history.pushState({}, "personajes", "/personajes");
+	App();
+});
+
+// const orden = document.getElementById('orden');
+// const tenebroso = document.getElementById('tenebroso');
+
+// function createButton(text, id) {
+// 	const button = document.createElement("button");
+// 	button.textContent = text;
+// 	button.addEventListener("click", () => {
+// 	  const element = document.getElementById(id);
+// 	  element.scrollIntoView({ behavior: "smooth" });
+// 	});
+// 	const routes = document.getElementById("nav");
+// 	routes.appendChild(button);
+// }
   
-createButton("Bando", "bando");
-createButton("Personajes", "personajes");
-createButton("Hechizos", "hechizos");
+// createButton("Bando", "bando");
+// createButton("Personajes", "personajes");
+// createButton("Hechizos", "hechizos");
 
 
-fetch(url)
-	.then((res) => res.json())
-	.then((data) => {
+// fetch(url)
+// 	.then((res) => res.json())
+// 	.then((data) => {
 
-		data.personajes.forEach((personaje) => {
-			createCard(personaje);
-		});
+// 		data.personajes.forEach((personaje) => {
+// 			createCard(personaje);
+// 		});
 
-		orden.addEventListener("click", ()=>{
-			personajes.scrollIntoView();
-		});
-		tenebroso.addEventListener("click", ()=>{
-			personajes.scrollIntoView();
-		});
+// 		orden.addEventListener("click", ()=>{
+// 			personajes.scrollIntoView();
+// 		});
+// 		tenebroso.addEventListener("click", ()=>{
+// 			personajes.scrollIntoView();
+// 		});
 
-		data.hechizos.forEach((hechizo) => {
-			createCard(hechizo);
-		});
-	})
-	.catch((e) => console.log(e))
+// 		data.hechizos.forEach((hechizo) => {
+// 			createCard(hechizo);
+// 		});
+// 	})
+// 	.catch((e) => console.log(e))
 
